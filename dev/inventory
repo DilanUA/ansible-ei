@@ -1,35 +1,41 @@
-[analytics-worker]
+#[analytics-worker]
 
-analytics_worker_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+#analytics_worker_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 # Example
 # analytics_worker_1 ansible_host=172.28.128.13 ansible_user=vagrant
 
-[bps]
+#[bps]
 
-bps_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+#bps_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 # Example
 # bps_1 ansible_host=172.28.128.12 ansible_user=vagrant
 
-[broker]
+#[broker]
 
-broker_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+#broker_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 # Example
 # broker_1 ansible_host=172.28.128.11 ansible_user=vagrant
 
-[integrator]
+#[integrator]
 
-integrator_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+#integrator_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 # Example
 # integrator_1 ansible_host=172.28.128.10 ansible_user=vagrant
 
-[ei]
+#[ei]
 
-analytics_dashboard_1 ansible_host=[ip_address] ansible_user=[ssh_user]
+#analytics_dashboard_1 ansible_host=[ip_address] ansible_user=[ssh_user]
 # Example
 # analytics_dashboard_1 ansible_host=172.28.128.13 ansible_user=vagrant
 
+#[ei:children]
+#analytics-worker
+#bps
+#broker
+#integrator
+
+[integrator]
+integrator_1 ansible_host=192.168.114.54 ansible_user=ubuntu
+
 [ei:children]
-analytics-worker
-bps
-broker
 integrator
