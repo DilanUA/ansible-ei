@@ -35,7 +35,7 @@
 #integrator
 
 [integrator]
-integrator_1 ansible_host=192.168.114.54 ansible_user=root
+integrator_1 ansible_host=192.168.114.54 ansible_user=jenkins
 
 [ei:children]
 integrator
