@@ -35,7 +35,7 @@
 #integrator
 
 [integrator]
-integrator_1 ansible_host=192.168.114.46 ansible_user=ubuntu
+integrator_1 ansible_host=192.168.114.11 ansible_user=ubuntu
 
 [ei:children]
 integrator
